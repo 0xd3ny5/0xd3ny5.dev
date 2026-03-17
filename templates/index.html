@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block title %}Denys — Portfolio{% endblock %}
+
+{% block content %}
+<section class="hero container">
+  <svg class="hero__hex-grid" width="180" height="180" viewBox="0 0 200 200">
+    <path d="M20 0L40 12L40 32L20 44L0 32L0 12Z" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M68 0L88 12L88 32L68 44L48 32L48 12Z" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M116 0L136 12L136 32L116 44L96 32L96 12Z" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M44 42L64 54L64 74L44 86L24 74L24 54Z" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M92 42L112 54L112 74L92 86L72 74L72 54Z" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M140 42L160 54L160 74L140 86L120 74L120 54Z" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M20 84L40 96L40 116L20 128L0 116L0 96Z" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M68 84L88 96L88 116L68 128L48 116L48 96Z" fill="none" stroke="currentColor" stroke-width="1"/>
+    <path d="M116 84L136 96L136 116L116 128L96 116L96 96Z" fill="none" stroke="currentColor" stroke-width="1"/>
+  </svg>
+  <div class="fade-in delay-1"><p class="hero__greeting">hello, world</p></div>
+  <div class="fade-in delay-2"><h1 class="hero__name">Den<span class="accent">ys</span></h1></div>
+  <div class="fade-in delay-3"><p class="hero__role">backend developer<span class="cursor"></span></p></div>
+  <div class="fade-in delay-4"><p class="hero__bio">Web · System Design<br/>Maintainability, maintainability, ...</p></div>
+</section>
+
+<section class="github-stats container fade-in delay-4">
+  <div class="github-stats__grid">
+    <div class="github-stats__item">
+      <svg class="github-stats__icon" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/>
+      </svg>
+      <span class="github-stats__value" data-target="0" data-key="repos">—</span>
+      <span class="github-stats__label">repos</span>
+    </div>
+    <div class="github-stats__item">
+      <svg class="github-stats__icon" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/>
+      </svg>
+      <span class="github-stats__value" data-target="0" data-key="stars">—</span>
+      <span class="github-stats__label">stars</span>
+    </div>
+    <div class="github-stats__item">
+      <svg class="github-stats__icon" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/>
+      </svg>
+      <span class="github-stats__value" data-target="0" data-key="commits">—</span>
+      <span class="github-stats__label">commits</span>
+    </div>
+    <div class="github-stats__item">
+      <svg class="github-stats__icon" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4.001 4.001 0 0 0-6.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 4.6 8.049 3.5 3.5 0 0 1 2 5.5ZM5.5 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm5.5.5a.75.75 0 0 1 .75-.75 2.5 2.5 0 0 1 0 5 .75.75 0 0 1 0-1.5 1 1 0 0 0 0-2 .75.75 0 0 1-.75-.75ZM13.348 12.174a.75.75 0 0 1 .878-.645 2 2 0 0 1 0 .87.75.75 0 0 1-1.482.236 4.032 4.032 0 0 0-.753-1.626.75.75 0 0 1 1.14-.973c.38.444.678.965.876 1.536a.75.75 0 0 1-.659.602Z"/>
+      </svg>
+      <span class="github-stats__value" data-target="0" data-key="followers">—</span>
+      <span class="github-stats__label">followers</span>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <p class="section__label">Projects</p>
+  <h2 class="section__title">Projects</h2>
+  <div class="projects-grid">
+    {% for project in projects %}
+    <a href="/projects/{{ project.id }}" class="project-card fade-in">
+      <div class="project-card__header">
+        <h3 class="project-card__title">{{ project.title }}</h3>
+        {% if project.is_featured %}
+        <span class="project-card__featured">featured</span>
+        {% endif %}
+      </div>
+      <p class="project-card__desc">{{ project.short_description }}</p>
+      <div class="project-card__tags">
+        {% for tag in project.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </a>
+    {% else %}
+    <p class="empty-text">// no projects published yet</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section container">
+  <p class="section__label">Skills</p>
+  <h2 class="section__title">Stack</h2>
+  <div class="skills-grid">
+    <div class="skill-group fade-in">
+      <h3 class="skill-group__title">Backend</h3>
+      <div class="skill-group__items">
+        <span class="skill-item">Python</span><span class="skill-item">FastAPI</span><span class="skill-item">Django</span><span class="skill-item">SQLAlchemy</span><span class="skill-item">Alembic</span>
+      </div>
+    </div>
+    <div class="skill-group fade-in">
+      <h3 class="skill-group__title">Databases</h3>
+      <div class="skill-group__items">
+        <span class="skill-item">PostgreSQL</span><span class="skill-item">MongoDB</span><span class="skill-item">Redis</span>
+      </div>
+    </div>
+    <div class="skill-group fade-in">
+      <h3 class="skill-group__title">DevOps</h3>
+      <div class="skill-group__items">
+        <span class="skill-item">Docker</span><span class="skill-item">Git</span><span class="skill-item">Railway</span><span class="skill-item">Linux</span><span class="skill-item">CI/CD</span>
+      </div>
+    </div>
+    <div class="skill-group fade-in">
+      <h3 class="skill-group__title">Architecture</h3>
+      <div class="skill-group__items">
+        <span class="skill-item">DDD</span><span class="skill-item">Clean Arch</span><span class="skill-item">CQRS</span><span class="skill-item">REST API</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+  function animateCount(el, target, duration) {
+    if (target === 0) { el.textContent = '0'; return; }
+    var start = 0, startTime = null;
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      var current = Math.floor(ease * target);
+      el.textContent = current.toLocaleString();
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString();
+    }
+    requestAnimationFrame(step);
+  }
+
+  function loadStats() {
+    fetch('/api/github-stats')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.error) return;
+        document.querySelectorAll('.github-stats__value').forEach(function (el) {
+          var key = el.getAttribute('data-key');
+          var val = data[key] || 0;
+          animateCount(el, val, 1800);
+        });
+      })
+      .catch(function () {});
+  }
+
+  var section = document.querySelector('.github-stats');
+  if (!section) return;
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        loadStats();
+        observer.disconnect();
+      }
+    }, { threshold: 0.3 });
+    observer.observe(section);
+  } else {
+    loadStats();
+  }
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "admin/base_admin.html" %}
+
+{% block title %}{% if is_edit %}Edit{% else %}New{% endif %} Project{% endblock %}
+
+{% block content %}
+<h1 class="form-title">{% if is_edit %}edit_project{% else %}new_project{% endif %}</h1>
+
+<form method="post" action="{% if is_edit %}/admin/projects/{{ project.id }}/edit{% else %}/admin/projects/new{% endif %}">
+
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" name="title" value="{{ project.title if project else '' }}" required/>
+  </div>
+
+  <div class="form-group">
+    <label>Short Description</label>
+    <textarea name="short_description" rows="3" required>{{ project.short_description if project else '' }}</textarea>
+    <p class="hint">Shown on the project card on the main page</p>
+  </div>
+
+  <div class="form-group">
+    <label>Full Description</label>
+    <textarea name="full_description" rows="8">{{ project.full_description if project else '' }}</textarea>
+    <p class="hint">Detailed project description shown on the project detail page</p>
+  </div>
+
+  <div class="form-group">
+    <label>Tags</label>
+    <input type="text" name="tags" value="{{ project.tags | join(', ') if project else '' }}"/>
+    <p class="hint">Comma-separated: Python, FastAPI, DDD</p>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label>GitHub URL</label>
+      <input type="text" name="github_url" value="{{ project.github_url if project else '' }}"/>
+    </div>
+    <div class="form-group">
+      <label>Live URL</label>
+      <input type="text" name="live_url" value="{{ project.live_url if project else '' }}"/>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label>Cover Image URL</label>
+      <input type="text" name="cover_image" value="{{ project.cover_image if project else '' }}"/>
+    </div>
+    <div class="form-group">
+      <label>Sort Order</label>
+      <input type="number" name="sort_order" value="{{ project.sort_order if project else 0 }}"/>
+    </div>
+  </div>
+
+  <div class="form-check">
+    <input type="checkbox" name="is_published" id="is_published" value="true"
+           {% if project and project.is_published %}checked{% endif %}/>
+    <label for="is_published">Published</label>
+  </div>
+
+  <div class="form-check">
+    <input type="checkbox" name="is_featured" id="is_featured" value="true"
+           {% if project and project.is_featured %}checked{% endif %}/>
+    <label for="is_featured">Featured project</label>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="btn">
+      {% if is_edit %}save changes{% else %}create project{% endif %}
+    </button>
+    <a href="/admin" class="btn btn--outline">cancel</a>
+  </div>
+</form>
+{% endblock %}

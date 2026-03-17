@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="{% block meta_description %}Denys — backend-разработчик. Python, FastAPI, DDD, Clean Architecture.{% endblock %}"/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}"/>
+<meta property="og:description" content="{% block og_description %}Backend-разработчик. Python · FastAPI · Clean Architecture.{% endblock %}"/>
+<meta property="og:type" content="{% block og_type %}website{% endblock %}"/>
+
+<title>{% block title %}denys{% endblock %}</title>
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/static/style.css"/>
+{% block extra_head %}{% endblock %}
+{% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container container--wide">
+    <a href="/" class="nav__logo">
+      <svg class="hex-icon" viewBox="0 0 24 24"><path d="M12 2L21.5 7.5V16.5L12 22L2.5 16.5V7.5L12 2Z"/></svg>
+      denys
+    </a>
+    <ul class="nav__links">
+      <li><a href="/" {% if active_page == 'projects' %}class="active"{% endif %}>projects</a></li>
+      <li><a href="/blog" {% if active_page == 'blog' %}class="active"{% endif %}>blog</a></li>
+      <li><a href="/about" {% if active_page == 'about' %}class="active"{% endif %}>about</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner container container--wide">
+    <span>&copy; 2026 denys</span>
+    <div class="footer-hex"><span></span><span></span><span></span></div>
+    <span>__all_rights_underscored__</span>
+  </div>
+</footer>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} — denys{% endblock %}
+{% block meta_description %}{{ post.description or post.title }}{% endblock %}
+{% block og_type %}article{% endblock %}
+
+{% block content %}
+<article class="post container">
+  <div class="post__header fade-in">
+    <a href="/blog" class="post__back">back to blog</a>
+    <h1 class="post__title">{{ post.title }}</h1>
+    <div class="post__meta">
+      <span>// {{ post.date }}</span>
+      {% if post.tags %}
+      <span>
+        {% for tag in post.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </span>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if post.cover %}
+  <img src="{{ post.cover }}" alt="{{ post.title }}" class="post__cover"/>
+  {% endif %}
+
+  <div class="prose fade-in">
+    {{ post.html | safe }}
+  </div>
+</article>
+{% endblock %}

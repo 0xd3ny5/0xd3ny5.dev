@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>{% block title %}Admin{% endblock %} — denys.dev</title>
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/static/style.css"/>
+<link rel="stylesheet" href="/static/admin.css"/>
+{% block extra_head %}{% endblock %}
+</head>
+<body>
+
+<header class="admin-header">
+  <nav class="admin-nav">
+    <a href="/admin" class="admin-nav__logo">
+      <span>></span> admin<span>_panel</span>
+    </a>
+    <div class="admin-nav__links">
+      <a href="/">site</a>
+      <a href="/admin">Projects</a>
+      <a href="/admin#blog">blog</a>
+    </div>
+  </nav>
+</header>
+
+<div class="admin-body">
+  {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

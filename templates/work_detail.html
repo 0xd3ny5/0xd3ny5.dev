@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }} — denys{% endblock %}
+{% block meta_description %}{{ project.short_description }}{% endblock %}
+
+{% block content %}
+<section class="work-detail container">
+  <a href="/" class="work-detail__back">back to projects</a>
+
+  <div class="work-detail__header fade-in">
+    <div class="work-detail__title-row">
+      <h1 class="work-detail__title">{{ project.title }}</h1>
+      {% if project.is_featured %}
+      <span class="work-detail__featured">featured</span>
+      {% endif %}
+    </div>
+
+    <div class="work-detail__meta">
+      // {{ project.created_at }}
+    </div>
+
+    <div class="work-detail__tags">
+      {% for tag in project.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+
+    {% if project.github_url or project.live_url %}
+    <div class="work-detail__links">
+      {% if project.github_url %}
+      <a href="{{ project.github_url }}" target="_blank" rel="noopener" class="work-detail__link">GitHub</a>
+      {% endif %}
+      {% if project.live_url %}
+      <a href="{{ project.live_url }}" target="_blank" rel="noopener" class="work-detail__link">Live</a>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+  {% if project.cover_image %}
+  <img src="{{ project.cover_image }}" alt="{{ project.title }}" class="work-detail__cover fade-in"/>
+  {% endif %}
+
+  <div class="work-detail__body fade-in">
+    {% for paragraph in project.full_description.split('\n') %}
+      {% if paragraph.strip() %}
+      <p>{{ paragraph.strip() }}</p>
+      {% endif %}
+    {% endfor %}
+
+    {% if not project.full_description %}
+    <p>{{ project.short_description }}</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
