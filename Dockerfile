@@ -7,13 +7,8 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends gcc libpq-dev && \
     rm -rf /var/lib/apt/lists/*
 
-COPY pyproject.toml ./
-COPY backend/ backend/
-COPY alembic.ini ./
-COPY migrations/ migrations/
-
-RUN pip install --no-cache-dir --prefix=/install . && \
-    pip install --no-cache-dir --prefix=/install gunicorn
+COPY backend/requirements.txt .
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
 
 
 # ── Runtime stage ─────────────────────────────────────────────
@@ -30,7 +25,7 @@ RUN apt-get update && \
 COPY --from=builder /install /usr/local
 
 COPY alembic.ini gunicorn.conf.py ./
-COPY migrations/ migrations/
+COPY static/ static/
 COPY backend/ backend/
 
 RUN chown -R app:app /app
@@ -41,4 +36,4 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
-CMD ["gunicorn", "-c", "gunicorn.conf.py", "backend.main:app"]
+CMD ["gunicorn", "-c", "gunicorn.conf.py", "backend.src.main:app"]
