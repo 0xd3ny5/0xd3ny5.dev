@@ -1,5 +1,10 @@
 <div align="center">
 
+  <img src="static/assets/banner.jpg" alt="0xd3ny5" />
+
+  <br />
+  <br />
+
   <img src="https://img.shields.io/badge/FastAPI-backend-0F766E?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/PostgreSQL-database-334155?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
   <img src="https://img.shields.io/badge/Docker-containerized-1D4ED8?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
