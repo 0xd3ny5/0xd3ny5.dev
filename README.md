@@ -36,7 +36,7 @@
 <table>
   <tr>
     <td align="center" valign="top" width="50%">
-      <video src="" autoplay loop muted playsinline width="100%"></video>
+      <video src="https://github.com/user-attachments/assets/c805f663-ce62-4969-a541-dfc69b5d19db" autoplay loop muted playsinline width="100%"></video>
       <br />
       <strong>Public Interface</strong>
       <br />
@@ -45,7 +45,7 @@
       </sub>
     </td>
     <td align="center" valign="top" width="50%">
-      <video src="" autoplay loop muted playsinline width="100%"></video>
+      <video src="https://github.com/user-attachments/assets/bae937c0-58d8-4511-bb49-d39cdece65d9" autoplay loop muted playsinline width="100%"></video>
       <br />
       <strong>Admin Interface</strong>
       <br />
